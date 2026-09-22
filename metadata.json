@@ -1,0 +1,6 @@
+{
+  "name": "AI Disease Prediction System",
+  "description": "An AI-based Healthcare educational system that predicts possible diseases based on user symptoms using machine learning classification, providing precautions, healthcare guidance, prediction history, and administrator controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

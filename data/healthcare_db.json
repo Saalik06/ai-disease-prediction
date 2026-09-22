@@ -1,0 +1,780 @@
+{
+  "users": [
+    {
+      "id": "usr_admin_master",
+      "name": "System Administrator",
+      "email": "admin@healthai.org",
+      "phone": "+1 (555) 019-2831",
+      "age": 38,
+      "gender": "Other",
+      "role": "admin",
+      "created_at": "2026-01-10T08:00:00.000Z",
+      "password_hash": "a18d8a4bb847935589796a61a46771c4599a5bb89f54fe83af037d513a0e8049158cadd92012713102ade2ac28b30a290f308e31b76671ecc11fa028750142a5",
+      "salt": "f28d414a7764b2d1138c6d680779009d"
+    },
+    {
+      "id": "usr_patient_demo1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1 (555) 234-5678",
+      "age": 34,
+      "gender": "Male",
+      "role": "patient",
+      "created_at": "2026-02-15T10:30:00.000Z",
+      "password_hash": "c42966168878b6d50037c8e3d79e71fa69173ca822160c96d012015dedfa9db1c0db0fcaae0a37b4bbb1b52e4cf5af8841ed4ff11fadb92abfd6917b434d1de3",
+      "salt": "c218b2e30d92b056a6e656d5733a8569"
+    },
+    {
+      "id": "usr_patient_demo2",
+      "name": "Sarah Jenkins",
+      "email": "sarah.jenkins@example.com",
+      "phone": "+1 (555) 876-5432",
+      "age": 29,
+      "gender": "Female",
+      "role": "patient",
+      "created_at": "2026-03-01T14:15:00.000Z",
+      "password_hash": "9ee607684590d610dc8a9311b7b047e1ca34bbf6445340e2e89742efa78f7264146359a8d82f11ad0c9c747c134bbf0851ebb3f9708e62f892eef5ed8c15f489",
+      "salt": "0be98fda6669368580a45fd55018eaba"
+    }
+  ],
+  "diseases": [
+    {
+      "id": "dis_influenza",
+      "disease_name": "Influenza (Flu)",
+      "description": "A contagious respiratory illness caused by influenza viruses that infect the nose, throat, and sometimes the lungs. Symptoms typically come on suddenly.",
+      "symptoms": [
+        "Fever",
+        "Cough",
+        "Fatigue",
+        "Headache",
+        "Body pain",
+        "Sore throat",
+        "Chills"
+      ],
+      "precautions": [
+        "Get plenty of bed rest and sleep to allow your immune system to fight the virus.",
+        "Drink plenty of fluids such as water, broth, and electrolyte solutions.",
+        "Take over-the-counter fever reducers or pain relievers as directed by a pharmacist.",
+        "Stay home for at least 24 hours after your fever is gone without medication.",
+        "Wash hands frequently and wear a mask around vulnerable household members."
+      ],
+      "when_to_seek_doctor": "Seek immediate medical attention if you experience difficulty breathing, chest pain, persistent dizziness, confusion, or if symptoms improve but then return with a high fever and worse cough.",
+      "risk_level": "moderate",
+      "category": "Infectious Respiratory"
+    },
+    {
+      "id": "dis_common_cold",
+      "disease_name": "Common Cold",
+      "description": "A mild viral infection of the upper respiratory tract, primarily affecting the nose and throat. Usually harmless and resolves within 7 to 10 days.",
+      "symptoms": [
+        "Runny nose",
+        "Sneezing",
+        "Sore throat",
+        "Cough",
+        "Headache",
+        "Fatigue"
+      ],
+      "precautions": [
+        "Stay hydrated with warm water, herbal teas, or clear broths.",
+        "Use saline nasal sprays or a humidifier to ease nasal congestion.",
+        "Gargle with warm salt water to relieve throat irritation.",
+        "Rest adequately and avoid strenuous physical exertion.",
+        "Avoid close contact with others to prevent transmission."
+      ],
+      "when_to_seek_doctor": "Consult a physician if symptoms last more than 10 days without improvement, or if you develop a high fever (above 101.3°F), severe sinus pain, or earache.",
+      "risk_level": "low",
+      "category": "Infectious Respiratory"
+    },
+    {
+      "id": "dis_covid19",
+      "disease_name": "COVID-19 (Viral Respiratory Infection)",
+      "description": "An infectious illness caused by the SARS-CoV-2 coronavirus. It presents with a wide spectrum of respiratory symptoms ranging from mild to severe.",
+      "symptoms": [
+        "Fever",
+        "Cough",
+        "Fatigue",
+        "Loss of taste or smell",
+        "Shortness of breath",
+        "Headache",
+        "Sore throat",
+        "Body pain"
+      ],
+      "precautions": [
+        "Isolate at home in a well-ventilated room to prevent spread to others.",
+        "Monitor your blood oxygen saturation using a pulse oximeter if available.",
+        "Stay well-hydrated and rest continuously.",
+        "Wear a high-filtration mask (e.g., N95 or KN95) if near others.",
+        "Take approved antipyretics for fever control as recommended by healthcare guidance."
+      ],
+      "when_to_seek_doctor": "Seek emergency medical evaluation immediately if you experience trouble breathing, persistent pain or pressure in the chest, new confusion, or pale, gray, or blue skin/lips/nail beds.",
+      "risk_level": "high",
+      "category": "Infectious Respiratory"
+    },
+    {
+      "id": "dis_migraine",
+      "disease_name": "Migraine Headache",
+      "description": "A neurological condition that causes intense, throbbing pain usually on one side of the head, often accompanied by sensitivity to light and sound.",
+      "symptoms": [
+        "Headache",
+        "Nausea",
+        "Dizziness",
+        "Vomiting",
+        "Fatigue"
+      ],
+      "precautions": [
+        "Rest in a quiet, dark, and cool room with eyes closed.",
+        "Apply cold or warm compresses to your forehead or the back of your neck.",
+        "Stay hydrated and avoid skipping meals or sudden caffeine withdrawals.",
+        "Identify and avoid known personal triggers (e.g., aged cheeses, bright lights, stress).",
+        "Practice gentle relaxation or deep breathing exercises."
+      ],
+      "when_to_seek_doctor": "Seek urgent medical care if you experience a \"thunderclap\" headache (abrupt, severe onset), headache with high fever and stiff neck, confusion, seizures, or double vision.",
+      "risk_level": "moderate",
+      "category": "Neurological"
+    },
+    {
+      "id": "dis_gastroenteritis",
+      "disease_name": "Gastroenteritis (Stomach Flu)",
+      "description": "An inflammation of the lining of the intestines caused by a virus, bacteria, or parasites, often termed food poisoning or viral gastroenteritis.",
+      "symptoms": [
+        "Nausea",
+        "Vomiting",
+        "Diarrhea",
+        "Abdominal pain",
+        "Fever",
+        "Headache"
+      ],
+      "precautions": [
+        "Prioritize oral rehydration solution (ORS) or electrolyte drinks in small sips.",
+        "Gradually introduce bland, easy-to-digest foods (bananas, rice, applesauce, toast - BRAT diet).",
+        "Avoid dairy, fatty, spicy, caffeine, and alcoholic beverages.",
+        "Wash hands thoroughly with soap and water after using the restroom.",
+        "Allow the digestive system to rest for a few hours after vomiting."
+      ],
+      "when_to_seek_doctor": "Seek medical care if you cannot keep liquids down for 24 hours, show signs of dehydration (excessive thirst, dry mouth, little to no urination), or see blood in vomit or stool.",
+      "risk_level": "moderate",
+      "category": "Gastrointestinal"
+    },
+    {
+      "id": "dis_pneumonia",
+      "disease_name": "Pneumonia",
+      "description": "An infection that inflames the air sacs in one or both lungs, which may fill with fluid or purulent material (pus), causing cough with phlegm and fever.",
+      "symptoms": [
+        "Cough",
+        "Fever",
+        "Shortness of breath",
+        "Chest pain",
+        "Chills",
+        "Fatigue"
+      ],
+      "precautions": [
+        "Seek clinical evaluation for accurate bacterial vs. viral diagnostic testing.",
+        "Complete the entire course of any prescribed antibiotics or antivirals.",
+        "Get plenty of rest and avoid all forms of smoke and respiratory irritants.",
+        "Drink plenty of warm fluids to help loosen secretions in the lungs.",
+        "Use a cool-mist humidifier in your sleeping area."
+      ],
+      "when_to_seek_doctor": "Pneumonia requires prompt professional medical evaluation. Seek immediate emergency care if you have severe shortness of breath, bluish lips, or sharp chest pain upon inhalation.",
+      "risk_level": "high",
+      "category": "Respiratory"
+    },
+    {
+      "id": "dis_bronchitis",
+      "disease_name": "Acute Bronchitis",
+      "description": "Inflammation of the lining of your bronchial tubes, which carry air to and from your lungs. It often develops from a cold or other respiratory infection.",
+      "symptoms": [
+        "Cough",
+        "Fatigue",
+        "Shortness of breath",
+        "Chest pain",
+        "Sore throat",
+        "Wheezing"
+      ],
+      "precautions": [
+        "Use steam inhalation or take a hot shower to loosen mucus.",
+        "Stay hydrated with warm water, teas, and broths.",
+        "Avoid lung irritants such as cigarette smoke, dust, and chemical fumes.",
+        "Rest your voice and avoid prolonged speaking if coughing persists.",
+        "Use honey (for adults) or throat lozenges to soothe cough irritation."
+      ],
+      "when_to_seek_doctor": "Consult a healthcare provider if cough produces rust-colored or bloody mucus, lasts longer than 3 weeks, or is accompanied by unexplained weight loss.",
+      "risk_level": "moderate",
+      "category": "Respiratory"
+    },
+    {
+      "id": "dis_gerd",
+      "disease_name": "Gastroesophageal Reflux Disease (GERD)",
+      "description": "A chronic digestive disease where stomach acid or bile irritates the lining of the food pipe (esophagus), causing recurring heartburn.",
+      "symptoms": [
+        "Heartburn",
+        "Chest pain",
+        "Nausea",
+        "Sore throat",
+        "Cough"
+      ],
+      "precautions": [
+        "Eat smaller, more frequent meals rather than large heavy meals.",
+        "Avoid lying down for at least 2 to 3 hours after eating.",
+        "Elevate the head of your bed by 6 inches with risers.",
+        "Limit known trigger foods such as tomato sauces, citrus, chocolate, peppermint, and caffeine.",
+        "Maintain a healthy body weight to reduce intra-abdominal pressure."
+      ],
+      "when_to_seek_doctor": "Consult a doctor if heartburn occurs more than twice a week, causes difficulty swallowing, or if chest pain radiates to your arm, neck, or jaw (which could signal cardiac distress).",
+      "risk_level": "low",
+      "category": "Gastrointestinal"
+    },
+    {
+      "id": "dis_uti",
+      "disease_name": "Urinary Tract Infection (UTI)",
+      "description": "An infection in any part of the urinary system, including kidneys, bladder, or urethra. Most infections involve the lower urinary tract.",
+      "symptoms": [
+        "Burning sensation during urination",
+        "Frequent urination",
+        "Abdominal pain",
+        "Fever",
+        "Fatigue"
+      ],
+      "precautions": [
+        "Drink plenty of water to dilute your urine and flush out bacteria.",
+        "Urinate promptly when the urge arises; do not hold urine.",
+        "Avoid potentially irritating feminine hygiene sprays, douches, and scented bubble baths.",
+        "Wipe from front to back after bowel movements to prevent bacterial spread.",
+        "Seek a formal urine culture test from a medical clinic."
+      ],
+      "when_to_seek_doctor": "Prompt clinical evaluation is necessary for prescription antibiotics. Seek immediate urgent care if you develop flank/back pain, high fever, or severe chills (signs of kidney involvement).",
+      "risk_level": "moderate",
+      "category": "Urological"
+    },
+    {
+      "id": "dis_hypertension",
+      "disease_name": "Hypertension (High Blood Pressure)",
+      "description": "A common cardiovascular condition in which the long-term force of the blood against your artery walls is high enough that it may eventually cause health problems.",
+      "symptoms": [
+        "Headache",
+        "Dizziness",
+        "Chest pain",
+        "Shortness of breath",
+        "Palpitations",
+        "Fatigue"
+      ],
+      "precautions": [
+        "Monitor and log your blood pressure regularly using a calibrated upper-arm cuff.",
+        "Adopt a heart-healthy diet low in sodium (DASH diet) rich in fruits, vegetables, and potassium.",
+        "Engage in moderate regular physical activity (e.g., 30 minutes of walking daily).",
+        "Limit alcohol consumption and eliminate tobacco use.",
+        "Practice stress management through mindfulness, meditation, or adequate sleep."
+      ],
+      "when_to_seek_doctor": "Seek emergency evaluation if systolic reading exceeds 180 mmHg or diastolic exceeds 120 mmHg, especially if paired with sudden chest pain, shortness of breath, numbness, or blurred vision.",
+      "risk_level": "high",
+      "category": "Cardiovascular"
+    },
+    {
+      "id": "dis_diabetes",
+      "disease_name": "Diabetes Mellitus (Type 2)",
+      "description": "A metabolic disorder characterized by high blood glucose levels resulting from insulin resistance or insufficient insulin production.",
+      "symptoms": [
+        "Increased thirst (Polydipsia)",
+        "Frequent urination",
+        "Fatigue",
+        "Weight loss",
+        "Dizziness"
+      ],
+      "precautions": [
+        "Schedule a formal HbA1c fasting blood glucose test with a healthcare professional.",
+        "Follow a balanced nutritional plan rich in whole grains, fiber, and lean proteins while minimizing refined sugars.",
+        "Participate in consistent aerobic exercise to improve insulin sensitivity.",
+        "Stay properly hydrated throughout the day.",
+        "Monitor foot health and maintain regular eye/kidney health checkups."
+      ],
+      "when_to_seek_doctor": "Consult an endocrinologist or primary care physician for diagnostic confirmation and personalized management. Seek emergency care if experiencing extreme confusion, breath smelling fruity, or vomiting.",
+      "risk_level": "moderate",
+      "category": "Endocrine"
+    },
+    {
+      "id": "dis_allergic_rhinitis",
+      "disease_name": "Allergic Rhinitis (Hay Fever)",
+      "description": "An allergic response to airborne allergens such as pollen, dust mites, or pet dander, causing inflammation of the nasal airways.",
+      "symptoms": [
+        "Sneezing",
+        "Runny nose",
+        "Headache",
+        "Itching (Pruritus)",
+        "Fatigue",
+        "Sore throat"
+      ],
+      "precautions": [
+        "Minimize exposure to pollen by keeping windows closed during high-count days.",
+        "Use HEPA air purifiers in bedrooms and vacuum frequently.",
+        "Rinse nasal passages with sterile saline nasal rinses.",
+        "Consult a doctor or pharmacist regarding non-drowsy antihistamines or nasal corticosteroid sprays.",
+        "Wash clothes and shower after spending extended time outdoors."
+      ],
+      "when_to_seek_doctor": "Consult an allergist if symptoms severely impair sleep or quality of life, or if over-the-counter allergy medications fail to provide relief.",
+      "risk_level": "low",
+      "category": "Immunological"
+    },
+    {
+      "id": "dis_dengue",
+      "disease_name": "Dengue Fever",
+      "description": "A mosquito-borne viral infection causing a severe flu-like illness. Also historically referred to as \"breakbone fever\" due to intense muscle and joint aches.",
+      "symptoms": [
+        "Fever",
+        "Headache",
+        "Body pain",
+        "Joint pain",
+        "Skin rash",
+        "Nausea",
+        "Vomiting"
+      ],
+      "precautions": [
+        "Get absolute bed rest and drink abundant oral rehydration fluids to avoid hemoconcentration.",
+        "Take paracetamol/acetaminophen strictly under medical guidance for fever.",
+        "STRICTLY AVOID aspirin, ibuprofen, and NSAIDs as they increase the risk of hemorrhage/bleeding.",
+        "Use mosquito nets and repellents to prevent onward viral transmission.",
+        "Monitor platelet counts closely through medical lab testing."
+      ],
+      "when_to_seek_doctor": "Seek immediate emergency hospital care if you notice warning signs: persistent severe abdominal pain, persistent vomiting, mucosal bleeding (gums/nose), or extreme lethargy.",
+      "risk_level": "high",
+      "category": "Infectious Vector-borne"
+    },
+    {
+      "id": "dis_malaria",
+      "disease_name": "Malaria",
+      "description": "A life-threatening disease caused by parasites that are transmitted to people through the bites of infected female Anopheles mosquitoes.",
+      "symptoms": [
+        "Fever",
+        "Chills",
+        "High fever and night sweats",
+        "Headache",
+        "Nausea",
+        "Vomiting",
+        "Body pain",
+        "Fatigue"
+      ],
+      "precautions": [
+        "Immediate blood smear/rapid diagnostic test at a medical clinic is mandatory.",
+        "Complete the full course of prescribed antimalarial medications (e.g., ACT therapies).",
+        "Rest in a comfortable environment and manage hydration.",
+        "Sleep under insecticide-treated bed nets.",
+        "Take prescribed medications at scheduled times without missing any doses."
+      ],
+      "when_to_seek_doctor": "Malaria is a medical emergency requiring clinical diagnosis and prescription antimalarials. Do not self-treat; seek hospital consultation immediately upon suspicion.",
+      "risk_level": "high",
+      "category": "Infectious Vector-borne"
+    },
+    {
+      "id": "dis_asthma",
+      "disease_name": "Bronchial Asthma (Acute Flare)",
+      "description": "A chronic condition in which your airways narrow and swell and may produce extra mucus, causing difficulty breathing, chest tightness, and wheezing.",
+      "symptoms": [
+        "Wheezing",
+        "Shortness of breath",
+        "Cough",
+        "Chest pain",
+        "Fatigue"
+      ],
+      "precautions": [
+        "Use your prescribed rapid-acting rescue inhaler (bronchodilator) as directed by your Asthma Action Plan.",
+        "Sit upright in a comfortable position and take slow, steady breaths.",
+        "Move away from any environmental triggers (cold air, smoke, strong fragrances, dust).",
+        "Stay calm; anxiety can worsen bronchospasm.",
+        "Keep your emergency contacts and rescue inhaler readily accessible at all times."
+      ],
+      "when_to_seek_doctor": "Seek immediate emergency medical treatment if rescue inhaler fails to relieve breathing distress, if speaking full sentences is impossible, or if ribs/neck pull inward with each breath.",
+      "risk_level": "critical",
+      "category": "Respiratory"
+    },
+    {
+      "id": "dis_hepatitis",
+      "disease_name": "Viral Hepatitis / Jaundice",
+      "description": "Inflammation of the liver caused by viral infection (Hepatitis A, B, C) or toxins, leading to impaired liver metabolism and jaundice.",
+      "symptoms": [
+        "Yellowing of eyes or skin",
+        "Abdominal pain",
+        "Fatigue",
+        "Nausea",
+        "Vomiting",
+        "Fever"
+      ],
+      "precautions": [
+        "Abstain completely from alcohol and medications that are metabolized by the liver unless prescribed.",
+        "Maintain a nutrient-dense, easily digestible diet with adequate caloric intake.",
+        "Rest and avoid vigorous athletic exertion.",
+        "Practice strict hand hygiene and ensure safe, boiled or filtered drinking water.",
+        "Consult a hepatologist or gastroenterologist for viral serology and liver function panels."
+      ],
+      "when_to_seek_doctor": "Requires professional medical management. Seek immediate emergency evaluation if you develop severe abdominal swelling, confusion, tremors, or easy bruising.",
+      "risk_level": "high",
+      "category": "Hepatic"
+    },
+    {
+      "id": "dis_arthritis",
+      "disease_name": "Rheumatoid / Osteoarthritis",
+      "description": "Inflammation and degeneration of one or more joints, causing chronic pain, stiffness, and reduced range of motion, typically worse in the morning.",
+      "symptoms": [
+        "Joint pain",
+        "Body pain",
+        "Fatigue",
+        "Muscle weakness"
+      ],
+      "precautions": [
+        "Incorporate gentle low-impact exercises such as swimming or stationary cycling.",
+        "Apply warm heating pads before activity to loosen stiff joints, and cold packs post-activity.",
+        "Maintain an anti-inflammatory diet rich in omega-3 fatty acids and antioxidants.",
+        "Use ergonomic aids and supportive footwear to reduce stress on joints.",
+        "Schedule periodic assessments with a rheumatologist or physical therapist."
+      ],
+      "when_to_seek_doctor": "Consult a doctor if joint pain is accompanied by warmth, redness, fever, or sudden inability to bear weight on the limb.",
+      "risk_level": "low",
+      "category": "Musculoskeletal"
+    },
+    {
+      "id": "dis_dermatitis",
+      "disease_name": "Allergic Contact Dermatitis / Eczema",
+      "description": "An inflammatory skin reaction characterized by red, itchy, and irritated patches caused by contact with an allergen or compromised skin barrier.",
+      "symptoms": [
+        "Skin rash",
+        "Itching (Pruritus)",
+        "Body pain"
+      ],
+      "precautions": [
+        "Apply thick, fragrance-free moisturizing creams or ceramides within 3 minutes of bathing.",
+        "Avoid harsh soaps, detergents, wool garments, and synthetic fabrics.",
+        "Use cool compresses on itchy areas instead of scratching to prevent secondary infection.",
+        "Keep fingernails trimmed short and clean.",
+        "Use lukewarm water for showers and baths rather than hot water."
+      ],
+      "when_to_seek_doctor": "Consult a dermatologist if the rash spreads rapidly, shows signs of infection (yellow crusting, pus, warmth), or causes severe discomfort preventing sleep.",
+      "risk_level": "low",
+      "category": "Dermatological"
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "sym_fever",
+      "symptom_name": "Fever",
+      "category": "General",
+      "description": "Elevated body temperature above 100.4°F (38°C)"
+    },
+    {
+      "id": "sym_headache",
+      "symptom_name": "Headache",
+      "category": "Neurological",
+      "description": "Pain or aching in the head or upper neck"
+    },
+    {
+      "id": "sym_cough",
+      "symptom_name": "Cough",
+      "category": "Respiratory",
+      "description": "Sudden, repetitive reflex to clear the airways"
+    },
+    {
+      "id": "sym_fatigue",
+      "symptom_name": "Fatigue",
+      "category": "General",
+      "description": "Persistent state of extreme tiredness or weakness"
+    },
+    {
+      "id": "sym_nausea",
+      "symptom_name": "Nausea",
+      "category": "Gastrointestinal",
+      "description": "Sensation of unease and discomfort in the stomach with an urge to vomit"
+    },
+    {
+      "id": "sym_vomiting",
+      "symptom_name": "Vomiting",
+      "category": "Gastrointestinal",
+      "description": "Forceful expulsion of stomach contents"
+    },
+    {
+      "id": "sym_body_pain",
+      "symptom_name": "Body pain",
+      "category": "Musculoskeletal",
+      "description": "Generalized muscle ache, tenderness or soreness"
+    },
+    {
+      "id": "sym_sore_throat",
+      "symptom_name": "Sore throat",
+      "category": "Respiratory",
+      "description": "Pain, scratchiness or irritation of the throat"
+    },
+    {
+      "id": "sym_shortness_breath",
+      "symptom_name": "Shortness of breath",
+      "category": "Respiratory",
+      "description": "Difficulty breathing or feeling breathless"
+    },
+    {
+      "id": "sym_chest_pain",
+      "symptom_name": "Chest pain",
+      "category": "Cardiovascular",
+      "description": "Discomfort, pressure or squeezing in the chest area"
+    },
+    {
+      "id": "sym_abdominal_pain",
+      "symptom_name": "Abdominal pain",
+      "category": "Gastrointestinal",
+      "description": "Cramping or ache in the belly or pelvic area"
+    },
+    {
+      "id": "sym_dizziness",
+      "symptom_name": "Dizziness",
+      "category": "Neurological",
+      "description": "Lightheadedness, feeling faint, or unsteadiness"
+    },
+    {
+      "id": "sym_skin_rash",
+      "symptom_name": "Skin rash",
+      "category": "Dermatological",
+      "description": "Noticeable change in skin texture, color, or swelling"
+    },
+    {
+      "id": "sym_joint_pain",
+      "symptom_name": "Joint pain",
+      "category": "Musculoskeletal",
+      "description": "Discomfort, pain, or inflammation in one or more joints"
+    },
+    {
+      "id": "sym_chills",
+      "symptom_name": "Chills",
+      "category": "General",
+      "description": "Feeling cold accompanied by shivering or goosebumps"
+    },
+    {
+      "id": "sym_loss_taste_smell",
+      "symptom_name": "Loss of taste or smell",
+      "category": "Sensory",
+      "description": "Partial or total reduction in olfactory or gustatory senses"
+    },
+    {
+      "id": "sym_runny_nose",
+      "symptom_name": "Runny nose",
+      "category": "Respiratory",
+      "description": "Excess drainage produced by nasal tissues (rhinorrhea)"
+    },
+    {
+      "id": "sym_sneezing",
+      "symptom_name": "Sneezing",
+      "category": "Respiratory",
+      "description": "Involuntary expulsion of air from the nose and mouth"
+    },
+    {
+      "id": "sym_wheezing",
+      "symptom_name": "Wheezing",
+      "category": "Respiratory",
+      "description": "High-pitched whistling sound during breathing"
+    },
+    {
+      "id": "sym_diarrhea",
+      "symptom_name": "Diarrhea",
+      "category": "Gastrointestinal",
+      "description": "Loose, watery and more frequent bowel movements"
+    },
+    {
+      "id": "sym_heartburn",
+      "symptom_name": "Heartburn",
+      "category": "Gastrointestinal",
+      "description": "Burning pain in the lower chest behind the breastbone"
+    },
+    {
+      "id": "sym_frequent_urination",
+      "symptom_name": "Frequent urination",
+      "category": "Urological",
+      "description": "Urge to urinate more often than typical"
+    },
+    {
+      "id": "sym_burning_urination",
+      "symptom_name": "Burning sensation during urination",
+      "category": "Urological",
+      "description": "Dysuria or stinging sensation during micturition"
+    },
+    {
+      "id": "sym_yellow_eyes_skin",
+      "symptom_name": "Yellowing of eyes or skin",
+      "category": "Hepatic",
+      "description": "Jaundice caused by elevated bilirubin levels"
+    },
+    {
+      "id": "sym_increased_thirst",
+      "symptom_name": "Increased thirst (Polydipsia)",
+      "category": "Endocrine",
+      "description": "Excessive and unquenchable craving for fluids"
+    },
+    {
+      "id": "sym_stiff_neck",
+      "symptom_name": "Stiff neck",
+      "category": "Neurological",
+      "description": "Soreness and difficulty moving or bending the neck"
+    },
+    {
+      "id": "sym_itching",
+      "symptom_name": "Itching (Pruritus)",
+      "category": "Dermatological",
+      "description": "Irritating sensation that provokes the urge to scratch"
+    },
+    {
+      "id": "sym_high_fever_sweats",
+      "symptom_name": "High fever and night sweats",
+      "category": "General",
+      "description": "Spiking fever followed by profuse nocturnal sweating"
+    },
+    {
+      "id": "sym_palpitations",
+      "symptom_name": "Palpitations",
+      "category": "Cardiovascular",
+      "description": "Feelings of a fast-beating, fluttering or pounding heart"
+    },
+    {
+      "id": "sym_muscle_weakness",
+      "symptom_name": "Muscle weakness",
+      "category": "Musculoskeletal",
+      "description": "Reduced physical strength in arms or legs"
+    }
+  ],
+  "predictions": [
+    {
+      "id": "pred_2d98d4f4-d",
+      "user_id": "anonymous",
+      "user_name": "Guest User",
+      "user_email": "guest@example.com",
+      "symptoms": [
+        "Fever",
+        "Cough"
+      ],
+      "symptom_weights": {
+        "Fever": {
+          "effective_multiplier": 2.25
+        },
+        "Cough": {
+          "effective_multiplier": 1.17
+        }
+      },
+      "predicted_disease": "COVID-19 (Viral Respiratory Infection)",
+      "confidence": 52,
+      "disease_description": "An infectious illness caused by the SARS-CoV-2 coronavirus. It presents with a wide spectrum of respiratory symptoms ranging from mild to severe.",
+      "precautions": [
+        "Isolate at home in a well-ventilated room to prevent spread to others.",
+        "Monitor your blood oxygen saturation using a pulse oximeter if available.",
+        "Stay well-hydrated and rest continuously.",
+        "Wear a high-filtration mask (e.g., N95 or KN95) if near others.",
+        "Take approved antipyretics for fever control as recommended by healthcare guidance."
+      ],
+      "recommended_next_step": "Consider consulting a qualified healthcare professional, especially if symptoms are severe, persistent, or worsening.",
+      "prediction_date": "2026-09-22T17:27:37.370Z"
+    },
+    {
+      "id": "pred_54b3b59a-1",
+      "user_id": "usr_patient_demo1",
+      "user_name": "John Doe",
+      "user_email": "john.doe@example.com",
+      "symptoms": [
+        "Fever",
+        "Cough",
+        "Fatigue",
+        "Chills",
+        "Body pain"
+      ],
+      "predicted_disease": "Influenza (Flu)",
+      "confidence": 81.6,
+      "disease_description": "A contagious respiratory illness caused by influenza viruses that infect the nose, throat, and sometimes the lungs. Symptoms typically come on suddenly.",
+      "precautions": [
+        "Get plenty of bed rest and sleep to allow your immune system to fight the virus.",
+        "Drink plenty of fluids such as water, broth, and electrolyte solutions.",
+        "Take over-the-counter fever reducers or pain relievers as directed by a pharmacist.",
+        "Stay home for at least 24 hours after your fever is gone without medication.",
+        "Wash hands frequently and wear a mask around vulnerable household members."
+      ],
+      "recommended_next_step": "Consider consulting a qualified healthcare professional, especially if symptoms are severe, persistent, or worsening.",
+      "prediction_date": "2026-09-22T17:15:13.691Z"
+    },
+    {
+      "id": "pred_hist_01",
+      "user_id": "usr_patient_demo1",
+      "user_name": "John Doe",
+      "user_email": "john.doe@example.com",
+      "symptoms": [
+        "Fever",
+        "Cough",
+        "Fatigue",
+        "Chills"
+      ],
+      "predicted_disease": "Influenza (Flu)",
+      "confidence": 88.4,
+      "prediction_date": "2026-09-17T17:11:10.978Z",
+      "disease_description": "A contagious respiratory illness caused by influenza viruses that infect the nose, throat, and sometimes the lungs.",
+      "precautions": [
+        "Get plenty of bed rest and sleep.",
+        "Drink fluids such as water, broth, and electrolyte solutions.",
+        "Take fever reducers as advised by pharmacist."
+      ],
+      "recommended_next_step": "Consult a primary care physician if fever exceeds 103°F or lasts more than 4 days."
+    },
+    {
+      "id": "pred_hist_02",
+      "user_id": "usr_patient_demo1",
+      "user_name": "John Doe",
+      "user_email": "john.doe@example.com",
+      "symptoms": [
+        "Headache",
+        "Dizziness",
+        "Nausea"
+      ],
+      "predicted_disease": "Migraine Headache",
+      "confidence": 82.1,
+      "prediction_date": "2026-09-08T17:11:10.978Z",
+      "disease_description": "A neurological condition that causes intense, throbbing pain usually on one side of the head.",
+      "precautions": [
+        "Rest in a dark, quiet room.",
+        "Apply cool compresses across the forehead.",
+        "Ensure adequate hydration."
+      ],
+      "recommended_next_step": "Schedule an appointment with a neurologist if headaches occur with visual aura or severe frequency."
+    },
+    {
+      "id": "pred_hist_03",
+      "user_id": "usr_patient_demo2",
+      "user_name": "Sarah Jenkins",
+      "user_email": "sarah.jenkins@example.com",
+      "symptoms": [
+        "Sneezing",
+        "Runny nose",
+        "Itching (Pruritus)",
+        "Sore throat"
+      ],
+      "predicted_disease": "Allergic Rhinitis (Hay Fever)",
+      "confidence": 91.5,
+      "prediction_date": "2026-09-20T17:11:10.978Z",
+      "disease_description": "An allergic response to airborne allergens such as pollen, dust mites, or pet dander.",
+      "precautions": [
+        "Minimize exposure to pollen by keeping windows closed.",
+        "Use HEPA air purifiers.",
+        "Rinse nasal passages with saline rinse."
+      ],
+      "recommended_next_step": "Consult an allergist if symptoms persist beyond seasonal pollen peaks."
+    },
+    {
+      "id": "pred_hist_04",
+      "user_id": "usr_patient_demo2",
+      "user_name": "Sarah Jenkins",
+      "user_email": "sarah.jenkins@example.com",
+      "symptoms": [
+        "Burning sensation during urination",
+        "Frequent urination",
+        "Abdominal pain"
+      ],
+      "predicted_disease": "Urinary Tract Infection (UTI)",
+      "confidence": 89.2,
+      "prediction_date": "2026-08-28T17:11:10.978Z",
+      "disease_description": "An infection in any part of the urinary system, including kidneys, bladder, or urethra.",
+      "precautions": [
+        "Drink copious amounts of clean water.",
+        "Do not delay urination.",
+        "Avoid bladder irritants like caffeine."
+      ],
+      "recommended_next_step": "Visit an urgent care clinic for a urinalysis and prescription antibiotics."
+    }
+  ],
+  "sessions": {
+    "773ea05f-6452-4671-9a07-bc09613a3b92": "usr_patient_demo1"
+  }
+}
